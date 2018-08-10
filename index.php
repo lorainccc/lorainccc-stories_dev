@@ -92,12 +92,13 @@ get_header(); ?>
 						//the_posts_navigation();
 						
 						?>
-						
+						<!--
 						<div class="text-center">
 						
 							<a id="more_posts" class="button hollow">Show More Stories</a>
 							
 						</div>
+						-->
 						
 					</div>
 					
