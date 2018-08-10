@@ -1,0 +1,23 @@
+<svg id="Group_34" data-name="Group 34" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 34.162 27.962">
+  <defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: none;
+      }
+
+      .cls-1 {
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-2 {
+        stroke: none;
+      }
+    </style>
+  </defs>
+  <g id="Ellipse_1" data-name="Ellipse 1" class="cls-1" transform="translate(0)">
+    <circle class="cls-2" cx="12.748" cy="12.748" r="12.748"/>
+    <circle class="cls-3" cx="12.748" cy="12.748" r="11.248"/>
+  </g>
+  <line id="Line_1" data-name="Line 1" class="cls-1" x2="10.692" y2="7.402" transform="translate(22.617 19.327)"/>
+</svg>

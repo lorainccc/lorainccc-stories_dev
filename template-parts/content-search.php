@@ -6,24 +6,47 @@
  *
  * @package LCCC Framework
  */
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+<div class="grid-x grid-padding-x search-result-item">
+	
+	<div class="medium-5 large-4 cell image-cell">
+		
+		<a href="<?php the_permalink(); ?>">
+			
+			<?php 
+			
+			if( has_post_thumbnail() ) :
+			
+				the_post_thumbnail(); 
+			
+			else :
+			
+				$fallback_featured_image = get_field('fallback_featured_image', 'option');
+			
+				echo '<img src="' . $fallback_featured_image['url'] . '" alt="' . $fallback_featured_image['alt'] . '" />';
+			
+			endif; 
+			
+			?>
+		
+		</a>	
+		
+	</div>
+	
+	<div class="medium-7 large-8 cell content-cell">
+		
+		<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php lccc_stories_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+		<div class="post-date"><?php the_time('F j, Y'); ?></div>
 
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
+		<div class="post-excerpt">
 
-	<footer class="entry-footer">
-		<?php lccc_stories_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+			<?php echo wp_trim_words( get_field('post_intro_text'), 30, '...'); ?>
+
+		</div>
+	
+	</div>
+
+</div>

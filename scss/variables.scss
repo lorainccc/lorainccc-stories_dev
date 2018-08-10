@@ -1,0 +1,41 @@
+/*********************
+Functions
+**********************
+Adding rem-calc() function here because I won't have enough sass functions to warrant their own file
+**********************/
+
+// Convert pixel to rem
+@function rem-calc($size) {
+	$remSize: $size / 16;
+	@return #{$remSize}rem;
+}
+
+/*********************
+Variables
+*********************/
+
+// Theme Colors
+
+$blue: #0055A4;
+$yellow: #FFC709;
+$gray: #707070;
+$dark-gray: #4A4A4B;
+$black: #000000;
+$white: #ffffff;
+
+// Fonts
+
+$sans: 'Source Sans Pro', sans-serif;
+$serif: 'Source Serif Pro', serif;
+
+// OffCanvas
+
+$offcanvas-sizes: (
+  small: 100%,
+);
+$offcanvas-vertical-sizes: (
+  small: 100%,
+);
+$offcanvas-full-screen-bg: rgba($blue, 0.95);
+$offcanvas-full-screen-side: top;
+$offcanvas-full-screen-closebutton-size: 5rem;

@@ -15,32 +15,99 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
-
-			<?php the_posts_navigation(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-		<?php endif; ?>
+			
+		<?php get_template_part( 'template-parts/home', 'banner' ); ?>
+						
+			<div class="grid-container posts-container">
+				
+				<div class="grid-x grid-padding-x">
+					
+					<div class="cell">
+						
+						<?php
+						
+						// WP_Query arguments for Featured Post
+						$featured_args = array(
+							'post_type' => array( 'post' ),
+							'posts_per_page' => '1',
+						);
+						
+						// The Query 
+						$featured_query = new WP_Query( $featured_args );
+						
+						// The Loop
+						if( $featured_query->have_posts() ) :
+						
+							while( $featured_query->have_posts() ) : $featured_query->the_post();
+						
+								// Create an array to store featured post's ID to exclude in the next query
+								$excluded_id[] = $post->ID;
+						
+								get_template_part( 'template-parts/home', 'featured' );
+						
+							endwhile;
+						
+						endif;
+						
+						// WP_Query arguments for rest of posts
+						$args = array(
+							'post_type' => array( 'post' ),
+							//'nopaging' => true,
+							'posts_per_page' => '9',
+							'post__not_in' => $excluded_id,
+						);
+						
+						// The Query
+						$query = new WP_Query( $args );
+						
+						// The Loop
+						if( $query->have_posts() ) :
+						
+						?>
+						
+						<div class="masonry-container">
+							
+							<div id="ajax-posts" class="grid-x grid-padding-x grid">
+								
+								<?php 
+								
+								while( $query->have_posts() ) : $query->the_post();
+								
+									get_template_part( 'template-parts/home', 'loop' );
+								
+								endwhile;
+								
+								?>
+							
+							</div>
+						
+						</div>
+						
+						<?php
+						
+						wp_reset_postdata();
+						
+						endif;
+						
+						//the_posts_navigation();
+						
+						?>
+						
+						<div class="text-center">
+						
+							<a id="more_posts" class="button hollow">Show More Stories</a>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+				
+			</div> <!-- .posts-container -->
 
 		</main><!-- #main -->
+		
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 <?php get_footer(); ?>

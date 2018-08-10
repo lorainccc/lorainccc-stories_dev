@@ -121,7 +121,16 @@ function lccc_stories_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'lccc_stories_scripts' );
 
+// Enqueue Google fonts - Source Serif Pro (regular), Source Sans Pro (light, regular, semi-bold, bold)
+function load_google_fonts() {
+	
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700|Source+Serif+Pro', array(), false, 'all' );
+		
+}
+add_action( 'wp_enqueue_scripts', 'load_google_fonts' );
+
 function lorainccc_subsite_scripts() {
+	
 	wp_enqueue_style( 'lorainccc_stories-style', get_stylesheet_uri() );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
