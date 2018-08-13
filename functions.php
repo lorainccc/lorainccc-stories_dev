@@ -106,7 +106,7 @@ function lorainccc_stories_scripts() {
 	
 	/* Add Custom CSS */
 	
- 	wp_enqueue_style( 'genericons', get_stylesheet_directory() . '/genericons/genericons.css', array(), '3.4.1' );
+ 	wp_enqueue_style( 'genericons', get_stylesheet_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
  
 	/* Add Foundation JS */
 	
@@ -116,23 +116,23 @@ function lorainccc_stories_scripts() {
 		wp_enqueue_script( 'foundation-whatinput', get_template_directory_uri() . '/foundation-643/js/vendor/what-input.js', array( 'jquery' ), '1', true);
 	/* Foundation Init JS */
 	
-	wp_enqueue_script( 'foundation-init-js', get_stylesheet_directory() . '/foundation.js', array( 'jquery' ), '1', true );
+	wp_enqueue_script( 'foundation-init-js', get_stylesheet_directory_uri() . '/foundation.js', array( 'jquery' ), '1', true );
 	
 		/* Foundation Icons */
 	if ( wp_style_is( 'foundation_font_icon_css', 'enqueued' ) ) {
 		return;
 	}else{
-			wp_enqueue_style('foundation_font_icon_css', get_stylesheet_directory() . '/foundation-icons/foundation-icons.css');
+			wp_enqueue_style('foundation_font_icon_css', get_template_directory_uri() . '/foundation-icons/foundation-icons.css');
 	}
 	/* ----- End Foundation Support ----- */
 		
-	wp_enqueue_style( 'lccc-stories-style', get_stylesheet_directory() );
+	wp_enqueue_style( 'lccc-stories-style', get_stylesheet_uri() );
  
- wp_enqueue_style( 'lccc-print-stories-style', get_stylesheet_directory() . '/print.css', array(), '', 'print' );
+ wp_enqueue_style( 'lccc-print-stories-style', get_stylesheet_directory_uri() . '/print.css', array(), '', 'print' );
 	
-	wp_enqueue_script( 'lccc-stories-navigation', get_stylesheet_directory() . '/js/navigation.js', array('jquery'), '20120206', true );
+	wp_enqueue_script( 'lccc-stories-navigation', get_stylesheet_directory_uri() . '/js/navigation.js', array('jquery'), '20120206', true );
 
-	wp_enqueue_script( 'lccc-stories-skip-link-focus-fix', get_stylesheet_directory() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'lccc-stories-skip-link-focus-fix', get_stylesheet_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
