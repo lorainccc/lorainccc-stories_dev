@@ -19,7 +19,7 @@ foreach( $categories as $category ) :
 	$cat_id = $category->term_id;
 	
 	// Do not show category: Uncategorized
-	if( $cat_id !== 1 ) :
+	//if( $cat_id !== 1 ) :
 	
 ?>
 	
@@ -31,7 +31,7 @@ foreach( $categories as $category ) :
 	
 <?php 
 	
-	endif;
+	//endif;
 	
 endforeach; 
 	
