@@ -60,7 +60,7 @@
 				
 				<div class="auto cell text-center logo-cell">
 					
-					<a href="<?php echo home_url(); ?>"><img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/lccclogo_white.svg" alt="Lorian County Community College Logo" /></a>
+					<a href="<?php echo home_url(); ?>"><img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/images/LCCC-Stories-w-text.svg" alt="Lorian County Community College Logo" /></a>
 				
 				</div>
 				
