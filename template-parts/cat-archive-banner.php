@@ -3,14 +3,14 @@
 $term = get_queried_object();
 
 $post_banner_background_type = get_field('cat_banner_background_type', $term);
-$post_banner_image = get_field('cat_banner_image', $term);
+$post_banner_image = wp_get_attachment_image_src(get_field('cat_banner_image', $term));
 $banner_vertical_positioning = get_field('cat_banner_vertical_positioning', $term);
 $video_bg = get_field('cat_video_bg', $term);
 $video_poster_image = get_field('cat_video_poster_image', $term);
 
 if( $post_banner_background_type == 'image' ) :
 
-	$banner_style = ' style="background-image: url(' . $post_banner_image . '); background-position: center ' . $banner_vertical_positioning . ';"';
+	$banner_style = ' style="background-image: url(' . $post_banner_image[0] . '); background-position: center ' . $banner_vertical_positioning . ';"';
 	$banner_type = 'image-bg';
 	$video = false;
 
