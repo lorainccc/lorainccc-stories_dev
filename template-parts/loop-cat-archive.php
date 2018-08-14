@@ -38,7 +38,7 @@ $linkedin_icon = get_field('linkedin_icon', 'option');
 
 			<div class="post-excerpt">
 
-				<?php the_field('post_intro_text'); ?>
+				<?php echo get_field('post_intro_text'); ?>
 
 			</div>
 
