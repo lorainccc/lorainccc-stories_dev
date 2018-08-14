@@ -249,7 +249,7 @@ add_filter( 'posts_distinct', 'cf_search_distinct' );
 
 // If banner has video background, enqueue Vidbacking assests
 // vidbacking - https://github.com/souravm84/vidbacking
-function enqueue_vidbacking() {
+function lc_enqueue_vidbacking() {
 	global $post;
 	
 	$post_id = $post->ID;
@@ -276,11 +276,11 @@ function enqueue_vidbacking() {
 	
 	if( $bg_type == 'video' ) {
 		wp_enqueue_style('vidbacking-css', get_stylesheet_directory_uri() . '/js/vidbacking/dist/jquery.vidbacking.min.css', array(), null, 'all' );
-		wp_enqueue_script('videbacking-js', get_stylesheet_directory_uri() . '/js/vidbacking/dist/jquery.vidbacking.min.js', array( 'jquery' ), null, true );
+		wp_enqueue_script('videbacking-js', get_stylesheet_directory_uri() . '/js/vidbacking/dist/jquery.vidbacking.min.js', array( 'jquery' ), null, false );
 	}
 	
 }
-add_action('wp_enqueue_scripts', 'enqueue_vidbacking');
+add_action('wp_enqueue_scripts', 'lc_enqueue_vidbacking');
 
 // Initialize vidbacking
 function vidbacking_init() {
