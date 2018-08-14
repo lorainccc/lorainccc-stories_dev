@@ -54,7 +54,7 @@ $linkedin_icon = get_field('linkedin_icon', 'option');
 
 						<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>" target="_blank">
 
-							<img src="<?php echo $twitter_icon['url']; ?>" alt="<?php echo $twitter_icon['alt']; ?>" height="28" width="28" />
+							<img src="/wp-content/themes/lorainccc-stories/images/twitter.svg" alt="" height="28" width="28" />
 
 						</a>
 
@@ -68,7 +68,7 @@ $linkedin_icon = get_field('linkedin_icon', 'option');
 
 						<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>" target="_blank">
 
-							<img src="<?php echo $facebook_icon['url']; ?>" alt="<?php echo $facebook_icon['alt']; ?>" height="28" width="28" />
+							<img src="/wp-content/themes/lorainccc-stories/images/facebook.svg" alt="" height="28" width="28" />
 
 						</a>
 
@@ -82,7 +82,7 @@ $linkedin_icon = get_field('linkedin_icon', 'option');
 
 						<a href="http://www.linkedin.com/shareArticle?mini=true&<?php the_permalink(); ?>" target="_blank">
 
-							<img src="<?php echo $linkedin_icon['url']; ?>" alt="<?php echo $linkedin_icon['alt']; ?>" height="28" width="28" />
+							<img src="/wp-content/themes/lorainccc-stories/images/linkedin.svg" alt="" height="28" width="28" />
 
 						</a>
 
