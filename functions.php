@@ -327,6 +327,7 @@ add_action('wp_footer', 'vidbacking_init');
 function enqueue_masonry() {
 	if( is_front_page() || is_category() ) {
 		wp_enqueue_script('masonry', get_stylesheet_directory_uri() . '/js/masonry/masonry.pkgd.min.js', array('jquery'), '', true );
+		wp_enqueue_script('images-loaded', get_stylesheet_directory_uri() . '/js/masonry/imagesloaded.pkgd.min.js', array('jquery'), '', true );
 	}
 }
 add_action('wp_enqueue_scripts', 'enqueue_masonry', 9999);
@@ -341,6 +342,8 @@ function masonry_init() {
 		jQuery('.grid').masonry({
 			itemSelector: '.grid-item',
 		});
+		
+		jQuery('.grid').imagesLoaded();
 
 	</script>
 	<?php	

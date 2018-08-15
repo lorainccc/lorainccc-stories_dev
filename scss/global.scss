@@ -598,29 +598,29 @@ Front Page Styles
 // Screen wider than content area
 @media screen and (min-width: 81.25em) {
 	h1 {
-		font-size: rem-calc(75) !important;
+		font-size: rem-calc(75 * .9) !important;
 	}
 	.headline-small {
-		font-size: rem-calc(71); 
+		font-size: rem-calc(71 * .9); 
 	}
 	
 	.headline-big {
-		font-size: rem-calc(280);
+		font-size: rem-calc(280 * .9);
 	}
 }
 
 // Screen from 1170px to 1299px
 @media screen and (min-width: 73.125em) and (max-width: 81.1875em) {
 	h1 {
-		font-size: rem-calc(63.75) !important;
+		font-size: rem-calc(63.75 * .9) !important;
 	}
 
 	.headline-small {
-		font-size: rem-calc(60.35); 
+		font-size: rem-calc(60.35 * .9); 
 	}
 	
 	.headline-big {
-		font-size: rem-calc(238);
+		font-size: rem-calc(238 * .9);
 	}
 	
 	.home-banner {
@@ -633,14 +633,14 @@ Front Page Styles
 // Screen medium-large break point to 1169px
 @media screen and (min-width: 64em) and (max-width: 73.0625em ) {
 	h1 {
-		font-size: rem-calc(52.5) !important;
+		font-size: rem-calc(52.5 * .9) !important;
 	}
 	.headline-small {
-		font-size: rem-calc(49.7); 
+		font-size: rem-calc(49.7 * .9); 
 	}
 	
 	.headline-big {
-		font-size: rem-calc(196);
+		font-size: rem-calc(196 * .9);
 	}
 	.home-banner {
 		.banner-inner {
@@ -652,14 +652,14 @@ Front Page Styles
 // Screen 750px to medium-large break point
 @media screen and (min-width: 46.875em) and (max-width: 63.9375em) {
 	h1 {
-		font-size: rem-calc(42.25) !important;
+		font-size: rem-calc(42.25 * .9) !important;
 	}
 	.headline-small {
-		font-size: rem-calc(39.05); 
+		font-size: rem-calc(39.05 * .9); 
 	}
 	
 	.headline-big {
-		font-size: rem-calc(154);
+		font-size: rem-calc(154 * .9);
 	}
 	.home-banner {
 		.banner-inner {
@@ -671,14 +671,14 @@ Front Page Styles
 // Screen small-medium break point to 749px
 @media screen and (min-width: 40em) and (max-width: 46.8125em) {
 	h1 {
-		font-size: rem-calc(30) !important;
+		font-size: rem-calc(30 * .9) !important;
 	}
 	.headline-small {
-		font-size: rem-calc(28.4); 
+		font-size: rem-calc(28.4 * .9); 
 	}
 	
 	.headline-big {
-		font-size: rem-calc(112);
+		font-size: rem-calc(112 * .9);
 	}
 	.home-banner {
 		.banner-inner {
