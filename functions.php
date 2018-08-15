@@ -339,11 +339,13 @@ function masonry_init() {
 	?>
 	<script>
 		
-		jQuery('.grid').masonry({
+		var $grid = jQuery('.grid').masonry({
 			itemSelector: '.grid-item',
 		});
 		
-		jQuery('.grid').imagesLoaded();
+		$grid.imagesLoaded().progress( function() {
+			$grid.masonry('layout');
+		});
 
 	</script>
 	<?php	
