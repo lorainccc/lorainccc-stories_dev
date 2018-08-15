@@ -126,6 +126,13 @@ body, p, a, span {
 			background-image: url(images/search.svg);
 		}
 	}
+	
+	&.no-content {
+		input[type="search"] {
+			color: $dark-gray;
+			border-bottom: 1px solid $dark-gray;
+		}
+	}
 }
 
 
