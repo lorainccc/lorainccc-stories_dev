@@ -7,7 +7,7 @@ if( $full_width_header ) :
 
 ?>
 
-<div class="flexible-layout-block">
+<div class="flexible-layout-block full-width-header-block">
 	
 	<div class="full-width-header">
 		

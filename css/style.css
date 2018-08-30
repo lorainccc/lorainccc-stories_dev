@@ -113,12 +113,14 @@ h1{color:#fff;font-size:6.25rem}h2{color:#0055a4;font-size:3.4375rem}body,p,a,sp
 .post-body-inner .share-buttons .menu li a{padding:0}.masonry-container .post-archive-item{margin-top:2rem;-webkit-transition:all 300ms;transition:all 300ms}
 .post-banner .vidbacking-active-block-back{z-index:1}.post-banner .banner-inner{position:relative;z-index:10}
 .banner-headline-wrapper{position:absolute;right:0;left:0;width:100%}.banner-headline-wrapper h1{font-weight:400;text-shadow:0 3px 16px rgba(0,0,0,0.55);line-height:100%}
-.post-intro-wrapper{background-color:#0055a4;margin-top:.58375rem;margin-bottom:6.25rem;position:relative;padding:4.375rem 0}
+.post-intro-wrapper{background-color:#0055a4;margin-top:.58375rem;margin-bottom:3.125rem;position:relative;padding:4.375rem 0}
 .post-intro-wrapper::before{content:'';position:absolute;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);height:0;width:0;z-index:11}
 .post-intro-wrapper .post-date{font-family:"Source Serif Pro",serif;color:#ffc709;padding-bottom:1rem;border-bottom:2px solid #fff}
 .post-intro-wrapper .post-intro{padding-top:1.5rem;font-weight:300;color:#fff;line-height:120%}
-.flexible-layout-block{margin-bottom:7.5rem}.flexible-layout-block p{color:#4a4a4b}
-.content-video-wrapper{position:relative}.content-video-wrapper .reveal-trigger{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;cursor:pointer}
+.story-categories{margin-bottom:3.125rem}.story-categories a,.story-categories a:visited{color:rgba(112,112,112,0.75);font-size:1rem;padding:.35rem .7rem;border:1px solid rgba(112,112,112,0.75);display:inline-block}
+.flexible-layout-block{margin-bottom:3.75rem}.flexible-layout-block p{color:#4a4a4b}
+.flexible-layout-block.full-width-header-block{margin-bottom:7.5rem}.content-video-wrapper{position:relative}
+.content-video-wrapper .reveal-trigger{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;cursor:pointer}
 .reveal-overlay{background-color:rgba(74,74,75,0.9)}.reveal.video-popup{padding-top:2.5rem;margin-top:1rem;background:transparent;border:0}
 .reveal.video-popup .close-button{right:.5;top:-.5rem;border:0;background:transparent;padding:0;-webkit-box-shadow:none;box-shadow:none}
 .quote-container .quote-content{line-height:120%;font-weight:700;font-size:2.5rem}
@@ -153,8 +155,9 @@ h1{color:#fff;font-size:6.25rem}h2{color:#0055a4;font-size:3.4375rem}body,p,a,sp
 }@media screen and (min-width:81.25em){h1{font-size:4.21875rem !important}.headline-small{font-size:3.99375rem}
 .headline-big{font-size:15.75rem}}@media screen and (min-width:40em){.grid-padding-x #featured.grid-padding-x{margin-left:0 !important;margin-right:0 !important}
 #featured .post-body{padding-left:.375rem}.masonry-container{margin-top:4rem}.masonry-container .post-archive-item:hover{margin-top:1.5rem}
-}@media screen and (min-width:64em){.header-bar{padding:1.75rem 0}.header-bar .menu-icon{margin-left:3.125rem}
-.header-bar .search-icon{margin-right:3.125rem}.post-body-inner::before{top:50%;left:-40px;-webkit-transform:translateY(-50%);transform:translateY(-50%);border-top:41px solid transparent;border-bottom:41px solid transparent;border-right:41px solid #0055a4}
+.story-categories a:not(:last-child){margin-right:1rem}}@media screen and (min-width:64em){.header-bar{padding:1.75rem 0}
+.header-bar .menu-icon{margin-left:3.125rem}.header-bar .search-icon{margin-right:3.125rem}
+.post-body-inner::before{top:50%;left:-40px;-webkit-transform:translateY(-50%);transform:translateY(-50%);border-top:41px solid transparent;border-bottom:41px solid transparent;border-right:41px solid #0055a4}
 .post-banner{height:37rem}.post-banner h1{font-size:6.1875rem}.banner-headline-wrapper{bottom:40px}
 .post-intro-wrapper::before{top:-40px;border-left:41px solid transparent;border-right:41px solid transparent;border-bottom:41px solid #0055a4}
 .post-intro-wrapper .post-date,.post-intro-wrapper .post-intro{font-size:2.5rem}.full-width-header::after{bottom:-40px;border-left:41px solid transparent;border-right:41px solid transparent;border-top:41px solid #0055a4}
@@ -177,7 +180,8 @@ div,p,a,span{font-size:1.125rem}.search-form input[type="search"]{font-size:1.25
 .home-banner .banner-inner{padding:7.5rem 0 10rem}.post-body{margin-top:.375rem}.post-body-inner::before{top:-30px;left:50%;-webkit-transform:translateX(-50%);transform:translateX(-50%);border-left:31px solid transparent;border-right:31px solid transparent;border-bottom:31px solid #0055a4}
 .post-banner{height:25rem}.post-banner h1{font-size:2.8125rem}.banner-headline-wrapper{bottom:20px}
 .post-intro-wrapper::before{top:-30px;border-left:31px solid transparent;border-right:31px solid transparent;border-bottom:31px solid #0055a4}
-.post-intro-wrapper .post-date,.post-intro-wrapper .post-intro{font-size:1.5rem}.flexible-layout-block{margin-bottom:5rem}
+.post-intro-wrapper .post-date,.post-intro-wrapper .post-intro{font-size:1.5rem}.story-categories a,.story-categories a:visited{margin:.5rem auto}
+.flexible-layout-block{margin-bottom:2.5rem}.flexible-layout-block.full-width-header-block{margin-bottom:5rem}
 .quote-container .quote-content{font-size:1.875rem}.quote-container .quote-attribution{font-size:1.375rem}
 .full-width-header::after{bottom:-30px;border-left:31px solid transparent;border-right:31px solid transparent;border-top:31px solid #0055a4}
 .full-width-header h2{font-size:2.125rem}.featured-text-container .main-text{font-size:1.875rem}

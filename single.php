@@ -16,6 +16,7 @@ get_header(); ?>
 			
 			get_template_part( 'template-parts/single', 'banner' );
 			get_template_part( 'template-parts/single', 'intro' ); 
+			get_template_part( 'template-parts/single', 'cats' );
 			get_template_part( 'template-parts/single', 'flexible' );
 			get_template_part( 'template-parts/content', 'social-sharing' );
 			get_template_part( 'template-parts/single', 'related-posts' );

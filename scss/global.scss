@@ -946,7 +946,7 @@ Post Styles (Single)
 .post-intro-wrapper {
 	background-color: $blue;
 	margin-top: rem-calc(9.34);
-	margin-bottom: rem-calc(100);
+	margin-bottom: rem-calc(50);
 	position: relative;
 	padding: rem-calc(70) 0;
 	
@@ -1028,19 +1028,49 @@ Post Styles (Single)
 	}
 }
 
+.story-categories {
+	margin-bottom: rem-calc(50);
+	
+	a, a:visited {
+		color: rgba($gray, .75);
+		font-size: 1rem;
+		padding: .35rem .7rem ;
+		border: 1px solid rgba($gray, .75);
+		display: inline-block;
+		
+		@media screen and (max-width: 39.9375em) { 
+			margin: .5rem auto;
+		}
+	}
+	
+	@media screen and (min-width: 40em) {
+		a:not(:last-child) {
+			margin-right: 1rem;
+		}
+	}
+}
+
 /**************************
 Flexible Content Options
 **************************/
 
 // All Flexible Content Options
 .flexible-layout-block {
-	margin-bottom: rem-calc(120);
+	margin-bottom: rem-calc(60);
 	p {
 		color: $dark-gray;
 	}
 	
 	@media screen and (max-width: 39.9375em) {
-		margin-bottom: rem-calc(80);
+		margin-bottom: rem-calc(40);
+	}
+	
+	&.full-width-header-block {
+		margin-bottom: rem-calc(120);
+		
+		@media screen and (max-width: 39.9375em) {
+			margin-bottom: rem-calc(80);
+		}
 	}
 }
 

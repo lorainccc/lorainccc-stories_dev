@@ -31,7 +31,7 @@ $post_intro_text = get_field('post_intro_text');
 		</div>
 		
 		<?php endif; ?>
-	
+			
 	</div>
 
 </div>
