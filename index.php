@@ -30,6 +30,7 @@ get_header(); ?>
 						$featured_args = array(
 							'post_type' => array( 'post' ),
 							'posts_per_page' => '1',
+							'paged' => 1,
 						);
 						
 						// The Query 
@@ -55,6 +56,7 @@ get_header(); ?>
 							//'nopaging' => true,
 							'posts_per_page' => '9',
 							'post__not_in' => $excluded_id,
+							'paged' => 1,
 						);
 						
 						// The Query
@@ -92,13 +94,13 @@ get_header(); ?>
 						//the_posts_navigation();
 						
 						?>
-						<!--
+						
 						<div class="text-center">
 						
 							<a id="more_posts" class="button hollow">Show More Stories</a>
 							
 						</div>
-						-->
+					
 						
 					</div>
 					

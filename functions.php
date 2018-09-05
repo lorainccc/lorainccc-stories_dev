@@ -322,6 +322,7 @@ function vidbacking_init() {
 }
 add_action('wp_footer', 'vidbacking_init');
 
+
 // Enqueue masonry js plugin - CDN Link
 // Documentation - https://masonry.desandro.com/
 function enqueue_masonry() {
@@ -395,14 +396,13 @@ function offcanvas_active_tab() {
 add_action('wp_footer', 'offcanvas_active_tab');
 
 
-/*
 function enqueue_functions_js() {
 	if( is_front_page() ) :
 	
-		wp_enqueue_script( 'show_more_script', get_stylesheet_directory_uri() . '/js/functions.js', array('jquery'), '', true );
-		wp_localize_script( 'show_more_script', 'ajax_posts', array(
+		wp_enqueue_script( 'show_more', get_stylesheet_directory_uri() . '/js/functions.js', array('jquery'), '', true );
+		wp_localize_script( 'show_more', 'ajax_object', array(
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
-			'noposts' => __('No more posts to show', 'lccc-stories'),
+			//'noposts' => __('No more posts to show', 'lccc-stories'),
 		));
 	
 	endif;
@@ -413,8 +413,9 @@ add_action( 'wp_enqueue_scripts', 'enqueue_functions_js' );
 
 // Show more posts with ajax
 function show_more_posts_ajax() {
-	
-	$posts_per_page = (isset($_POST["ppp"])) ? $_POST["ppp"] : 9;
+	//global $wp_query;
+	//global $post;
+	$posts_per_page = (isset($_POST["ppp"])) ? $_POST["ppp"] : 3;
 	$page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
 	
 	header("Content-Type: text/html");
@@ -438,16 +439,23 @@ function show_more_posts_ajax() {
 	
 		while( $loop->have_posts() ) : $loop->the_post();
 	
-			if( have_post_thumbnail() ) :
+			$twitter_icon = get_field('twitter_icon', 'option');
+			$facebook_icon = get_field('facebook_icon', 'option');
+			$linkedin_icon = get_field('linkedin_icon', 'option');
+
 	
+			if( has_post_thumbnail() ) :
+
 				$thumb = get_the_post_thumbnail();
-	
-			else : 
-	
+
+			else :
+
 				$fallback_featured_image = get_field('fallback_featured_image', 'option');
 				$thumb = '<img src="' . $fallback_featured_image['url'] . '" alt="' . $fallback_featured_image['alt'] . '" />';
-	
+
 			endif;
+	
+			$post_excerpt = get_field('post_intro_text');
 	
 			$social_sharing = '';
 	
@@ -505,38 +513,31 @@ function show_more_posts_ajax() {
 					
 			endif;
 	
-			$post_excerpt = get_field('post_intro_text');
+			echo '<div class="grid-item medium-6 large-4 cell">';
+
+				echo '<div class="post-archive-item">';
+
+					echo '<a href="' . get_permalink() . '">';
+
+						echo $thumb;
+
+					echo '</a>';
+
+					echo '<div class="post-archive-item-inner">';
+
+						echo '<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
 	
-			echo 'Post';
-			
-			
-			$output .= '<div class="grid-item medium-6 large-4 cell">';
+						echo '<div class="post-date">' . get_the_time('F j, Y') . '</div>';
 	
-			$output .= '	<div class="post-archive-item">';
+						echo '<div class="post-excerpt">' . $post_excerpt . '</div>';
 	
-			$output .= '		<a href="' . get_permalink() . '">';
-	
-			$output .= '			' . $thumb;
-		
-			$output .= '		</a>';
-	
-			$output .= '		<div class="post-archive-item-inner">';
-	
-			$output .= '			<h3><a href="' . get_permalink() . '">' . get_the_title() . '</a></h3>';
-	
-			$output .= '			<div class="post-date">' . get_the_time('F j, Y') . '</div>';
-	
-			$output .= '			<div class="post-excerpt">' . $post_excerpt . '</div>';
-	
-			$output .= '			' . $social_sharing;
-	
-			$output .= '		</div><!-- end .post-archive-item-inner -->';
-	
-			$output .= '	</div><!-- end .post-archive-item -->';
-	
-			$output .= '</div><!-- end .grid-item -->';
-			
-			echo $output;
+						echo $social_sharing;
+
+					echo '</div>';
+
+				echo '</div>';
+
+			echo '</div>';
 	
 		endwhile;
 	
@@ -544,13 +545,13 @@ function show_more_posts_ajax() {
 	
 	wp_reset_postdata();
 	
-	die($output);
+	wp_die();
 	
 }
-add_action('wp_ajax_nopriv_show_more_posts_ajax', 'show_more_posts_ajax');
-add_action('wp_ajax_show_more_posts_ajax', 'show_more_posts_ajax');
+add_action('wp_ajax_nopriv_show_more', 'show_more_posts_ajax');
+add_action('wp_ajax_show_more', 'show_more_posts_ajax');
 
-*/
+
 // Allow SVGs to be uploaded to media galler
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
