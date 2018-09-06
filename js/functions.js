@@ -21,20 +21,25 @@ jQuery(document).ready(function($) {
 				var itemCount = data.match(/grid-item/gi).length;
 				
 				if($data.length){
+					
 					if( itemCount == ppp ) {
 						$("#more_posts").attr('disabled', false);
 					} else {
-						$("#more_posts").attr('disabled', 'disabled');
+						$("#more_posts").hide();
 					}
-					// Append jQuery object $data to masonry grid
-					$grid.append( $data ).masonry( 'appended', $data );
+					
 				} else{
-					$("#more_posts").attr('disabled', 'disabled');
+					$("#more_posts").hide();
 				}
+				
+				// Append jQuery object $data to masonry grid
+				$grid.append( $data ).masonry( 'appended', $data );
+				$grid.imagesLoaded().progress( function() {
+					$grid.masonry('layout');
+				});
 			},
 			error : function(jqXHR, textStatus, errorThrown) {
 				//$loader.html(jqXHR + " :: " + textStatus + " :: " + errorThrown);
-				console.log("Failed: " + $data);
 			}
 
 		});
