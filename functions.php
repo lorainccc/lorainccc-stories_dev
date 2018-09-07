@@ -422,9 +422,9 @@ add_action( 'wp_enqueue_scripts', 'enqueue_functions_js' );
 
 // Show more posts with ajax
 function show_more_posts_ajax() {
-	//global $wp_query;
-	//global $post;
-	$posts_per_page = (isset($_POST["ppp"])) ? $_POST["ppp"] : 3;
+	
+	
+	$posts_per_page = (isset($_POST["ppp"])) ? $_POST["ppp"] : 9;
 	$page = (isset($_POST['pageNumber'])) ? $_POST['pageNumber'] : 0;
 	
 	header("Content-Type: text/html");
@@ -432,7 +432,7 @@ function show_more_posts_ajax() {
 	$args = array(
 		'suppress_filters' => true,
 		'post_type' => 'post',
-		'posts_per_page' => $posts_per_page,
+		'posts_per_page' => $post_per_page,
 		'paged' => $page,
 	);
 	

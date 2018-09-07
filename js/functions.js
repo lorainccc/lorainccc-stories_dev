@@ -1,13 +1,12 @@
 jQuery(document).ready(function($) {
 	
 	var ppp = 9; // Post per page
-	//var cat = 8;
 	var pageNumber = 1;
 
 
 	function load_posts(){
-		pageNumber++;
 		
+		pageNumber++;
 
 		var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=show_more';
 		$.ajax({
@@ -50,5 +49,7 @@ jQuery(document).ready(function($) {
 		$("#more_posts").attr("disabled",true); // Disable the button, temp.
 		load_posts();
 	});	
+	
+	
 	
 });
