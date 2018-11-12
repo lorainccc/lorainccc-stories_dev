@@ -21,10 +21,11 @@ jQuery(document).ready(function($) {
 				
 				if($data.length){
 					
-					if( itemCount == ppp ) {
-						$("#more_posts").attr('disabled', false);
-					} else {
+					if( itemCount < ppp ) {
+						
 						$("#more_posts").hide();
+					} else {
+						$("#more_posts").attr('disabled', false);
 					}
 					
 				} else{
