@@ -43,7 +43,7 @@ button:focus,input[type="button"]:focus,input[type="reset"]:focus,input[type="su
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],textarea{color:#666;border:1px solid #ccc;border-radius:3px}
 input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,textarea:focus{color:#111}
 input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"]{padding:3px}
-textarea{padding-left:3px;width:100%}a{color:royalblue}a:visited{color:purple}a:hover,a:focus,a:active{color:midnightblue}
+textarea{padding-left:3px;width:100%}a{color:royalblue}a:visited{color:purple}a:hover,a:focus,a:active{color:midnightblue;text-decoration:underline}
 a:focus{outline:thin dotted}a:hover,a:active{outline:0}.main-navigation{clear:both;display:block;float:left;width:100%}
 .main-navigation ul{display:none;list-style:none;margin:0;padding-left:0}.main-navigation li{float:left;position:relative}
 .main-navigation a{display:block;text-decoration:none}.main-navigation ul ul{-webkit-box-shadow:0 3px 3px rgba(0,0,0,0.2);box-shadow:0 3px 3px rgba(0,0,0,0.2);float:left;position:absolute;top:1.5em;left:-999em;z-index:99999}
