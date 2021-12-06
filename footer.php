@@ -19,7 +19,7 @@
 								<span><a id="cat-link">Categories</a></span> | <span><a id="list-link">List View</a></span>
 							</div>
 							<div class="main-site-link">
-								<a href="http://www.lorainccc.edu/" target="_blank">www.lorainccc.edu</a>
+								<a href="http://www.lorainccc.edu/" target="_blank">LCCC Website</a>
 							</div>
 							<div class="copyright">
 								<span>Copyright Lorain County Community College <?php echo date('Y'); ?></span>
